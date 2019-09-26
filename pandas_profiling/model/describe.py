@@ -297,7 +297,7 @@ def describe_supported(series: pd.Series, series_description: dict) -> dict:
         "p_infinite": n_infinite * 1.0 / leng,
         "n_infinite": n_infinite,
         "is_unique": distinct_count == leng,
-        "mode": series.mode().iloc[0] if count > distinct_count > 1 else series[0],
+        "mode": series.mode().iloc[0] if count > distinct_count > 1 else series.iloc[0],
         "p_unique": distinct_count * 1.0 / leng,
         "memorysize": series.memory_usage(),
     }
